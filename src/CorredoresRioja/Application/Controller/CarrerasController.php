@@ -10,6 +10,7 @@ namespace App\CorredoresRioja\Application\Controller;
 use App\CorredoresRioja\Domain\Repository\ICarreraRepository;
 use App\CorredoresRioja\Domain\Repository\IOrganizacionRepository;
 use Symfony\Component\HttpFoundation\Response;
+use Twig_Environment;
 /**
  * Description of CarreraController
  *
@@ -19,11 +20,12 @@ class CarrerasController {
     
     private $carrerasRepository;
     private $organizacionesRepository;
+    private $twig;
     
-    
-    function __construct(ICarreraRepository $carrerasRepository, IOrganizacionRepository $organizacionesRepository) {
+    function __construct(ICarreraRepository $carrerasRepository, IOrganizacionRepository $organizacionesRepository, Twig_Environment $twig) {
         $this->carrerasRepository = $carrerasRepository;
         $this->organizacionesRepository = $organizacionesRepository;
+        $this->twig = $twig;
     }
 
     
@@ -37,7 +39,8 @@ class CarrerasController {
     
     function showCarrera($slug){
         $carrera = $this->carrerasRepository->buscarCarreraPorSlug($slug);
-        return new Response($carrera);
+        return new Response($this->twig->render('@corredores/carrera.html.twig',
+                array('carrera'=>$carrera)));
         
         
     }
@@ -46,14 +49,14 @@ class CarrerasController {
     function showAll(){
         $carrerasDisputadas = $this->carrerasRepository->listarTodasCarrerasDisputadas();
         $carrerasPorDisputar = $this->carrerasRepository->listarTodasCarrerasPorDisputar();
-        
-        return new Response('Carreras Disputadas: ' . implode("<br/>",$carrerasDisputadas) . 
-                '<br/>Carreras por Disputar: ' . implode("<br/>",$carrerasPorDisputar) );
+        return new Response($this->twig->render('@corredores/carreras.html.twig',
+                array('carreraspordisputar'=>$carrerasPorDisputar,'carrerasdisputadas'=>$carrerasDisputadas)));
     }
     
     function showOrganizacion($slug){
         $organizacion = $this->organizacionesRepository->buscarOrganizacionPorSlug($slug);
-        return new Response($organizacion);
+        return new Response($this->twig->render('@corredores/organizacion.html.twig',
+                array('organizacion'=>$organizacion)));
         
     }
     

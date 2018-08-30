@@ -21,7 +21,8 @@ class InMemoryCarreraRepository implements ICarreraRepository{
                 500, "matutrail.jpg", $matuteOrg);
         $urOrg = new Organizacion(2, "UR", "Servicio deportes UR", "deportes@unirioja.es", 123456);
         $this->carreras[] = new Carrera(2, "Carrera UR", "Carrera UR", new \DateTime("2018-5-5"), 10, new \DateTime("2018-5-4"),
-                1000, "ur.jpg", $urOrg);
+                1000, "ur.png", $urOrg);
+        
     }
     
     

@@ -1,0 +1,12 @@
+{% extends '@corredores/zonacorredores.html.twig' %}
+
+{% block contenido %}
+    <div class="centro">
+        <h1>{{ organizacion.nombre }}</h1>
+
+        
+            <p> {{ organizacion.descripcion }}</p>
+            <p> <a href="mailto:{{ organizacion.email }}">Contacta</a> </p>
+            <div class="clear"></div>
+    </div>
+{% endblock %}

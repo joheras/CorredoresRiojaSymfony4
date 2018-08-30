@@ -1,0 +1,26 @@
+{% extends '@corredores/zonacorredores.html.twig' %}
+
+{% block contenido %}
+    <div class="centro">
+        <h1>{{ carrera.nombre }}</h1>
+
+        <div class="parteCelda">
+            <img src="{{ asset('images/' ~ carrera.imagen) }}"/>
+        </div>
+        <div class="parteCelda2">
+            <p> {{ carrera.descripcion }}</p>
+            <p> Fecha celebración: {{ carrera.fechaCelebracion | date }} </p>
+            <p> Distancia: {{ carrera.distancia }}</p>
+            <p> Organiza: <a href="{{ path('organizacion', { 'slug' : carrera.organizacion.slug } ) }}">
+                    {{ carrera.organizacion.nombre }}</a></p>
+            <div class="clear"></div>
+        </div>
+    </div>
+            <div class="izquierda">
+            {% if date(carrera.fechaLimiteInscripcion) > date('now') %}
+                <h3> Tienes hasta el {{ carrera.fechaLimiteInscripcion | date('d \\d\\e M \\d\\e Y') }} para inscribirte </h3>
+            {% else %}
+                <h3> Lo sentimos ya no te puedes inscribir en esta carrera </h3>    
+            {% endif %}
+        </div>
+{% endblock %}

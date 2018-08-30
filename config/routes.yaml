@@ -2,7 +2,13 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+principal:
+    resource: '../src/CorredoresRioja/Resources/routing/routes.yaml'
+
 corredores:
-    resource: '../src/CorredoresRioja/Resources/routing/'
-    type: directory
+    resource: '../src/CorredoresRioja/Resources/routing/routesCorredores.yaml'
     prefix: /corredores
+    
+organizaciones:
+    resource: '../src/CorredoresRioja/Resources/routing/routesOrganizaciones.yaml'
+    prefix: /organizaciones

@@ -1,0 +1,5 @@
+twig:
+    paths: 
+        'src/CorredoresRioja/Resources/views': 'corredores'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
