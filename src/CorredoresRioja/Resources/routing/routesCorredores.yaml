@@ -12,3 +12,24 @@ carrera:
 organizacion:
     path: /organizacion/{slug}
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:showOrganizacion
+    
+registro:
+    path: /registro
+    controller: App\CorredoresRioja\Application\Controller\CarrerasController:registro 
+    
+miscarreras:
+    path: /miscarreras
+    controller: App\CorredoresRioja\Application\Controller\CarrerasController:miscarreras
+
+    
+perfil:
+    path: /perfil
+    controller: App\CorredoresRioja\Application\Controller\CarrerasController:perfil
+    
+corredor_login:
+    path: /login
+    controller: App\CorredoresRioja\Application\Controller\CarrerasController:login
+
+corredor_logout:
+    path: /logout
+    

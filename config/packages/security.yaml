@@ -1,0 +1,36 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory: { memory: ~ }
+        corredores:
+            id: App\CorredoresRioja\Security\User\CorredorUserProvider
+    encoders:
+        App\CorredoresRioja\Security\User\CorredorUser: plaintext
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            provider: corredores
+
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            form_login: 
+                login_path: corredor_login
+                check_path: corredor_login
+            
+            logout:
+                path: corredor_logout
+                target: index
+            # https://symfony.com/doc/current/security/form_login_setup.html
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/corredores/miscarreras, roles: ROLE_CORREDOR }
+        - { path: ^/corredores/perfil, roles: ROLE_CORREDOR }
+        # - { path: ^/profile, roles: ROLE_USER }

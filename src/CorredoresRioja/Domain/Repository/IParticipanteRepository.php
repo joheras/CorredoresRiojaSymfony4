@@ -18,8 +18,8 @@ interface IParticipanteRepository {
     
     function inscribirCorredorEnCarrera(Corredor $corredor, Carrera $carrera);
     function listarParticipantesCarrera(Carrera $carrera);
-    function listarCarrerasDisputadasPorCorredor(Corredor $corredor);
-    function listarCarrerasPorDisputarPorCorredor(Corredor $corredor);
+    function listarCarrerasDisputadasPorCorredor($username);
+    function listarCarrerasPorDisputarPorCorredor($username);
     function comprobarCorredorInscritoCarrera(Corredor $corredor, Carrera $carrera);
     function actualizarTiempoCorredorCarrera(Corredor $corredor, Carrera $carrera, $tiempo);
     function eliminarParticipacion(Participante $participante);

@@ -88,7 +88,7 @@ class InMemoryCarreraRepository implements ICarreraRepository{
     }
 
     public function listarTodasCarrerasDisputadas() {
-        $carrerasDisputadas;
+        $carrerasDisputadas=[];
         foreach($this->carreras as $c) {
             if($c->getFechaCelebracion()<new \DateTime("now")){
                $carrerasDisputadas[]=$c;
@@ -98,7 +98,7 @@ class InMemoryCarreraRepository implements ICarreraRepository{
     }
 
     public function listarTodasCarrerasPorDisputar() {
-        $carrerasPorDisputar;
+        $carrerasPorDisputar=[];
         foreach($this->carreras as $c) {
             if($c->getFechaCelebracion()>new \DateTime("now")){
                $carrerasPorDisputar[]=$c;

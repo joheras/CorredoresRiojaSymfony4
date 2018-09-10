@@ -1,0 +1,61 @@
+{% extends '@corredores/zonacorredores.html.twig' %}
+
+{% block contenido %}
+<h1>Carreras por disputar</h1>
+ <div class="centro"/>
+
+ <ul>
+     {% for carrera in carreraspordisputar %}
+     
+         <ul>
+             <li class="celda">
+         <div class="parteCelda">
+             <img src="{{ asset('images/' ~ carrera.imagen) }}"/>
+         </div>
+         <div class="parteCelda2">
+             <h3><a href="{{ path('carrera', { 'slug' : carrera.slug } ) }}"> {{ carrera.nombre }}</a></h3>
+             <p>{{ carrera.fechaCelebracion | date }}</p>
+             <div style="float:right; padding:10px 5px">
+            </div>
+         </div>    
+     </li>
+  </ul>
+     </li>
+     {% else %}
+         <li class="columna">
+             <p>No estás inscrito a ninguna carrera por disputar.</p>
+         </li>
+      {% endfor %}
+ </ul>
+
+</div>
+ <div class="clear"></div>   
+ <h1>Carreras disputadas</h1>
+<div class="centro"/>
+
+ <ul>
+     {% for carrera in carrerasdisputadas %}
+     <li class="columna">
+         <ul>
+             <li class="celda">
+         <div class="parteCelda">
+             <img src="{{ asset('images/' ~ carrera.imagen) }}"/>
+         </div>
+         <div class="parteCelda2">
+             <h3><a href="{{ path('carrera', { 'slug' : carrera.slug } ) }}"> {{ carrera.nombre }}</a></h3>
+             <p>{{ carrera.fechaCelebracion | date }}</p>
+             <div style="float:right; padding:10px 5px">
+            
+            </div>
+         </div>    
+     </li>
+  </ul>
+     </li>
+      {% endfor %}
+ </ul>
+ 
+ 
+ </ul>
+
+</div>
+{% endblock %}
