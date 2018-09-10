@@ -136,6 +136,7 @@ class CarrerasController extends AbstractController {
 // Lo almacenamos en nuestro repositorio de corredores
             $this->corredoresRepository->actualizarCorredor($corredor);
         }
+        
         return $this->render("@corredores/perfil.html.twig", array('formulario' => $form->createView()));
     }
 
