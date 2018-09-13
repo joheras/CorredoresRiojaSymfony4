@@ -6,6 +6,8 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.6",
+        "doctrine/cache": "^1.8",
+        "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "*",
         "symfony/console": "*",
         "symfony/flex": "^1.1",
@@ -20,7 +22,10 @@
     },
     "require-dev": {
         "symfony/dotenv": "*",
+        "symfony/maker-bundle": "^1.7",
+        "symfony/phpunit-bridge": "*",
         "symfony/profiler-pack": "^1.0",
+        "symfony/test-pack": "^1.0",
         "symfony/web-server-bundle": "*"
     },
     "config": {
