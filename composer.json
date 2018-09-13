@@ -12,12 +12,15 @@
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
         "symfony/security-bundle": "*",
+        "symfony/translation": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+        "twig/extensions": "^1.5"
     },
     "require-dev": {
         "symfony/dotenv": "*",
+        "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "*"
     },
     "config": {

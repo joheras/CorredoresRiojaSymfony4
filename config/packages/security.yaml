@@ -33,4 +33,6 @@ security:
     access_control:
         - { path: ^/corredores/miscarreras, roles: ROLE_CORREDOR }
         - { path: ^/corredores/perfil, roles: ROLE_CORREDOR }
+        - { path: ^/runners/myraces, roles: ROLE_CORREDOR }
+        - { path: ^/runners/profile, roles: ROLE_CORREDOR }
         # - { path: ^/profile, roles: ROLE_USER }

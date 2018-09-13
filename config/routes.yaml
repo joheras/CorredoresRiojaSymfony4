@@ -4,10 +4,13 @@
 
 principal:
     resource: '../src/CorredoresRioja/Resources/routing/routes.yaml'
+    
 
 corredores:
     resource: '../src/CorredoresRioja/Resources/routing/routesCorredores.yaml'
-    prefix: /corredores
+    prefix: 
+        en: /runners
+        es: /corredores
     
 organizaciones:
     resource: '../src/CorredoresRioja/Resources/routing/routesOrganizaciones.yaml'

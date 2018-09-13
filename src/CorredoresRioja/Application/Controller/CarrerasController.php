@@ -22,7 +22,6 @@ use App\CorredoresRioja\Form\CorredorType;
 use App\CorredoresRioja\Security\User\CorredorUser;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use App\CorredoresRioja\Domain\Repository\IParticipanteRepository;
-
 /**
  * Description of CarreraController
  *
@@ -38,6 +37,10 @@ class CarrerasController extends AbstractController {
     private $session;
     private $router;
     private $participantesRepository;
+    
+    
+
+    
 
     function __construct(IParticipanteRepository $participantesRepository, ICarreraRepository $carrerasRepository, IOrganizacionRepository $organizacionesRepository, Twig_Environment $twig, UserPasswordEncoderInterface $encoder, SessionInterface $session, ICorredorRepository $corredoresRepository, UrlGeneratorInterface $router) {
         $this->carrerasRepository = $carrerasRepository;
@@ -48,6 +51,7 @@ class CarrerasController extends AbstractController {
         $this->corredoresRepository = $corredoresRepository;
         $this->router = $router;
         $this->participantesRepository = $participantesRepository;
+
     }
 
     function index() {
@@ -58,10 +62,12 @@ class CarrerasController extends AbstractController {
 
     function showCarrera($slug) {
         $carrera = $this->carrerasRepository->buscarCarreraPorSlug($slug);
-        return new Response($this->twig->render('@corredores/carrera.html.twig', array('carrera' => $carrera)));
+//        return new Response($this->twig->render('@corredores/carrera.html.twig', array('carrera' => $carrera)));
+        return $this->render('@corredores/carrera.html.twig', array('carrera' => $carrera));
     }
 
     function showAll() {
+        
         $carrerasDisputadas = $this->carrerasRepository->listarTodasCarrerasDisputadas();
         $carrerasPorDisputar = $this->carrerasRepository->listarTodasCarrerasPorDisputar();
         return new Response($this->twig->render('@corredores/carreras.html.twig', array('carreraspordisputar' => $carrerasPorDisputar, 'carrerasdisputadas' => $carrerasDisputadas)));

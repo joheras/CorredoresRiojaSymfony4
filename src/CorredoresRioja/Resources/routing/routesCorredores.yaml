@@ -2,28 +2,40 @@
 
     
 carreras:
-    path: /carreras
+    path: 
+        en: /races
+        es: /carreras
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:showAll
     
 carrera:
-    path: /carrera/{slug}
+    path: 
+        en: /race/{slug}
+        es: /carrera/{slug}
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:showCarrera
 
 organizacion:
-    path: /organizacion/{slug}
+    path: 
+        es: /organizacion/{slug}
+        en: /organization/{slug}
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:showOrganizacion
     
 registro:
-    path: /registro
+    path: 
+        es: /registro
+        en: /signup
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:registro 
     
 miscarreras:
-    path: /miscarreras
+    path: 
+        es: /miscarreras
+        en: /myraces
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:miscarreras
 
     
 perfil:
-    path: /perfil
+    path: 
+        es: /perfil
+        en: /profile
     controller: App\CorredoresRioja\Application\Controller\CarrerasController:perfil
     
 corredor_login:

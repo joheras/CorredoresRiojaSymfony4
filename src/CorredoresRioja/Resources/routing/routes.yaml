@@ -1,5 +1,7 @@
 index:
-    path: /
+    path: 
+        en: /
+        es: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
         template: '@corredores/portada.html.twig'

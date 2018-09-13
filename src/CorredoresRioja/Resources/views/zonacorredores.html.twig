@@ -4,17 +4,17 @@
 
 <ul>
 <li>
-<a href="{{ path('index') }}">Portada<br/></a>
+<a href="{{ path('index') }}">{% trans %}Portada{% endtrans %}<br/></a>
 </li>
 <li>
-<a href="{{ path('carreras') }}">Carreras<br/></a>
+<a href="{{ path('carreras') }}">{{ 'menu.carreras' | trans }}<br/></a>
 </li>
 <li>
-<a href="{{ path('miscarreras') }}">Mis carreras<br/></a>
+<a href="{{ path('miscarreras') }}">{{ 'menu.miscarreras' | trans }}<br/></a>
 </li>
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}   
 <li>
-<a href="{{ path('perfil') }}">Perfil<br/></a>
+<a href="{{ path('perfil') }}">{{ 'menu.perfil' | trans }}<br/></a>
 </li>   
 <li>
 <a href="{{ path('corredor_logout') }}">Logout<br/></a>
